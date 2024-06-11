@@ -79,17 +79,17 @@ app.get('/api/getitems',(req,res)=>{
     res.json(items);
 });
 
-app.post('api/additem',(req,res)=>{
+app.post('/api/additem',(req,res)=>{
     let bodyRequest= req.body;
     const newItem= {id:id++,
-            	description:bodyRequest.descritcion,
+            	description:bodyRequest.description,
                 price:bodyRequest.price
             };
     items.push(newItem);
     res.json(newItem);
 })
 
-app.put('api/updateitem/:idrequest',(req,res)=>{
+app.put('/api/updateitem/:idrequest',(req,res)=>{
     let idrequest = req.params.id;
     let bodyRequest = req.body
     let item= items.find((item)=>item.id == idrequest);
